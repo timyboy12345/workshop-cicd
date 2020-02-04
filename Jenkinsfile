@@ -32,7 +32,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Test'
+                sh 'npm run test'
             }
         }
         stage('e2e Test') {
