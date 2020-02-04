@@ -19,7 +19,7 @@ pipeline {
             }
             steps {
                 dir("code/backend") {
-                    sh 'npm build "code/backend"';
+                    sh 'npm run build';
                 }
             }
         }
