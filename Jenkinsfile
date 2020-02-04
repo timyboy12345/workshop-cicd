@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo "BUILDING!!!";
                 sh 'cd "code/backend"';
-                sh 'npm run build';
+                sh 'npm build "code/backend"';
             }
         }
         stage('Static Analysis') {
