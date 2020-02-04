@@ -55,7 +55,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {          
-                dir("ci/jenkins") {    
+                dir("ci/code") {    
                     sh 'docker-compose -f docker-compose.yml build';
                     sh 'docker-compose -f docker-compose.yml up -d';
                 }
