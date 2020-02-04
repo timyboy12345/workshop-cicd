@@ -8,7 +8,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                cd "code/backend";
+                sh 'cd "code/backend"';
                 sh 'npm install';
             }
         }
@@ -17,7 +17,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                cd "code/backend";
+                sh 'cd "code/backend"';
                 sh 'npm run build';
             }
         }
@@ -26,7 +26,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                cd "code/backend";
+                sh 'cd "code/backend"';
                 sh 'npm run lint';
             }
         }
