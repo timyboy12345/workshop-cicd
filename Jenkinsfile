@@ -8,7 +8,8 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Prepare'
+                cd "code/backend";
+                sh 'npm install';
             }
         }
         stage('Build') {
@@ -16,7 +17,8 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Build'      
+                cd "code/backend";
+                sh 'npm run build';
             }
         }
         stage('Static Analysis') {
@@ -24,7 +26,8 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Analyze' 
+                cd "code/backend";
+                sh 'npm run lint';
             }
         }
         stage('Unit Test') {
