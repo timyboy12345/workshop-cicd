@@ -54,12 +54,11 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent {
-                docker { image 'node:alpine' }
-            }
-            steps {              
-                sh 'docker-compose -f docker-compose.yml build';
-                sh 'docker-compose -f docker-compose.yml up -d';
+            steps {          
+                dir("ci/jenkins") {    
+                    sh 'docker-compose -f docker-compose.yml build';
+                    sh 'docker-compose -f docker-compose.yml up -d';
+                }
             }
         }
     }
